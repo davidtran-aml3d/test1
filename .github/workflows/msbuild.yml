@@ -34,7 +34,7 @@ jobs:
         host: 'windows'
         target: 'desktop'
         arch: 'win64_msvc2019_64'
-        dir: ${{ github.workspace }}/example/
+        dir: '${{ env.GITHUB_WORKSPACE }}/example/'
         modules: 'qtcore qtcharts qtopengl qt3dquick qtgui qtopenglextensions qtwidgets qtxml qtxmlpatterns'
         extra: '--external 7z'
     - name: Buildqtcharts
