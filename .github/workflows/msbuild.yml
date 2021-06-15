@@ -34,7 +34,7 @@ jobs:
         host: 'windows'
         target: 'desktop'
         arch: 'win64_msvc2019_64'
-        modules: 'qtcore qtcharts qtopengl'
+        modules: 'qtcore qtcharts qtopengl qt3dquick qtgui qtopenglextensions qtwidgets qtxml qtxmlpatterns'
     - name: Buildqtcharts
       working-directory: ${{env.GITHUB_WORKSPACE}}
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
