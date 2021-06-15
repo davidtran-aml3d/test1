@@ -24,6 +24,15 @@ jobs:
     - name: Restore NuGet packages
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: nuget restore ${{env.SOLUTION_FILE_PATH}}
+      
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v2.13.2
+      with:
+        host: windows
+        version: ${{ env.QT_VERSION }}
+        arch: ${{ env.MINGW_VERSION }}
+        #modules: 'qtcore'
+        extra: --external 7z
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
