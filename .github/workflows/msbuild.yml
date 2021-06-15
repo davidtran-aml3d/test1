@@ -25,7 +25,7 @@ jobs:
 
     - name: Restore NuGet packages
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: nuget restore ${{env.GITHUB_WORKSPACE}}/WAMSoft.sln
+      run: nuget restore '${{env.SOLUTION_FILE_PATH}}/WAMSoft.sln'
 
     - name: Install Qt
       uses: jurplel/install-qt-action@v2
