@@ -25,7 +25,7 @@ jobs:
 
     - name: Restore NuGet packages
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: nuget restore ${{env.SOLUTION_FILE_PATH}}
+      run: nuget restore '${{env.SOLUTION_FILE_PATH}}/WAMSoft.sln'
 
     - name: Install Qt
       uses: jurplel/install-qt-action@v2
@@ -34,7 +34,7 @@ jobs:
         host: 'windows'
         target: 'desktop'
         arch: 'win64_msvc2019_64'
-        dir: '${{ env.GITHUB_WORKSPACE }}/example/'
+        dir: '${{env.GITHUB_WORKSPACE}}/libraries/'
         modules: 'qtcore qtcharts qtopengl qt3dquick qtgui qtopenglextensions qtwidgets qtxml qtxmlpatterns'
       
     - name: Buildqtcharts
